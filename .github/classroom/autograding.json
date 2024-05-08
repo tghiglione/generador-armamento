@@ -1,24 +1,24 @@
 {
   "tests": [
     {
-      "name": "Pruebas Vector",
+      "name": "Pruebas Cola",
       "setup": "./build.sh",
-      "run": "./test_vector.sh",
+      "run": "./test_cola.sh",
       "input": null,
       "output": null,
       "comparison": "exact",
       "timeout": 5,
-      "points": 10
+      "points": 5
     },
     {
-      "name": "Pruebas Gacha",
+      "name": "Pruebas Lista Circular",
       "setup": "./build.sh",
-      "run": "./test_gacha.sh",
+      "run": "./test_lista_circular.sh",
       "input": null,
       "output": null,
       "comparison": "exact",
       "timeout": 5,
-      "points": 6
+      "points": 15
     },
     {
       "name": "Chequeo de Memoria",
@@ -28,7 +28,7 @@
       "output": null,
       "comparison": "exact",
       "timeout": 5,
-      "points": 4
+      "points": 5
     }
   ]
 }

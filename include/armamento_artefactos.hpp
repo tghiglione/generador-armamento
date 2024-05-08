@@ -1,0 +1,8 @@
+#ifndef AYED_TP3_1C2024_ARMAMENTO_ARTEFACTOS_HPP
+#define AYED_TP3_1C2024_ARMAMENTO_ARTEFACTOS_HPP
+
+class armamento_artefactos {
+
+};
+
+#endif

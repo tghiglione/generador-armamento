@@ -2,9 +2,9 @@
 if [ ! -d "build" ]; then
   echo "ERROR: No se compiló el proyecto. Ejecutá './build.sh' antes de probar."
   exit 1
-elif [ ! -f "build/tests/gacha_test" ]; then
+elif [ ! -f "build/tests/cola_test" ]; then
   echo "ERROR: El proyecto no compiló correctamente. Revisá los errores que reporta './build.sh'."
   exit 1
 else
-  ./build/tests/gacha_test
+  ./build/tests/cola_test
 fi

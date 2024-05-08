@@ -1,7 +1,7 @@
-# AyED / AYP2 - TP2 1c2024
+# AyED / AYP2 - TP3 1c2024
 
 <p align="center">
-   <img src="Banner.jpg" alt="TP2: Los Saltos"><br>
+   <img src="Banner.jpg" alt="TP3: Quality of Life"><br>
 </p>
 
 ### Estudiante: APELLIDO, NOMBRE - PADRÓN
