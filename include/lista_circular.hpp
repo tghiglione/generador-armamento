@@ -96,47 +96,91 @@ public:
 
 template<typename T>
 lista_circular<T>::lista_circular() {
-
+    cantidad_datos = 0;
+    primer_nodo = nullptr;
+    cursor = nullptr;
 }
 
 template<typename T>
 void lista_circular<T>::alta(T dato) {
-
+    if(cantidad_datos == 0){
+        nodo<T>* nuevo_nodo = new nodo<T>(dato);
+        primer_nodo = nuevo_nodo;
+        primer_nodo->siguiente = primer_nodo->anterior = primer_nodo;
+        cursor = primer_nodo;
+    }else{
+        nodo<T>* nuevo_nodo = new nodo<T>(dato,cursor->anterior,cursor);
+        cursor->anterior->siguiente = nuevo_nodo;
+        cursor->anterior = nuevo_nodo;
+    }
+    cantidad_datos++;
 }
 
 template<typename T>
 T lista_circular<T>::actual() {
-
+    if(cantidad_datos == 0 && !cursor){
+        throw lista_circular_exception();
+    }
+    return cursor->dato;
 }
 
 template<typename T>
 T lista_circular<T>::baja() {
+    if(cantidad_datos == 0){
+        throw lista_circular_exception();
+    }
+    nodo<T>* eliminado = cursor;
+    T dato_eliminado = eliminado->dato;
 
+    if(cantidad_datos == 1){
+        delete cursor;
+        primer_nodo = cursor = nullptr;
+    }else{
+        cursor->anterior->siguiente = cursor->siguiente;
+        cursor->siguiente->anterior = cursor->anterior;
+        cursor = cursor->siguiente;
+        delete eliminado;
+        if (eliminado == primer_nodo) {
+            primer_nodo = cursor;
+        }
+    }
+    cantidad_datos--;
+    return dato_eliminado;
 }
 
 template<typename T>
 void lista_circular<T>::avanzar() {
-
+    if(cursor){
+        cursor = cursor->siguiente;
+    }
 }
 
 template<typename T>
 void lista_circular<T>::retroceder() {
-
+    if(cursor){
+        cursor = cursor->anterior;
+    }
 }
 
 template<typename T>
 size_t lista_circular<T>::tamanio() {
-
+    return cantidad_datos;
 }
 
 template<typename T>
 bool lista_circular<T>::vacio() {
-
+    return cantidad_datos == 0;
 }
 
 template<typename T>
 lista_circular<T>::~lista_circular() {
-
+    nodo<T>* actual = primer_nodo;
+    nodo<T>* aux;
+    for (size_t i = 0; i < cantidad_datos; i++) {
+        aux = actual->siguiente;
+        delete actual;
+        actual = aux;
+    }
 }
 
 #endif

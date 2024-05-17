@@ -5,11 +5,11 @@
    <img src="Banner.jpg" alt="TP3: Quality of Life"><br>
 </p>
 
-### Estudiante: APELLIDO, NOMBRE - PADRÓN
+### Estudiante: Ghiglione, Tomas - 104747
 
 El proyecto se puede compilar manualmente por terminal con la siguiente línea:
 
-> // COMPLETAR CON LINEA DE COMPILACIÓN //
+> g++ -I include main.cpp src/*.cpp -o main -Wall -Werror -Wconversion -std=c++23
 
 O, alternativamente, con CMake, utilizando el archivo **CMakeLists.txt** presente en el directorio raíz.
 

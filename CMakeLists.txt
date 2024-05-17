@@ -22,6 +22,12 @@ set(ARCHIVOS_FUENTE
         include/artefacto.hpp
         src/combate.cpp
         include/combate.hpp
+        src/menu.cpp
+        include/menu.hpp
+        include/menu_combates_multiples.hpp
+        src/menu_combates_multiples.cpp
+        src/menu_armamento.cpp
+        include/menu_armamento.hpp
 )
 
 add_executable(AyED_TP3_1c2024

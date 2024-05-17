@@ -56,37 +56,68 @@ public:
 
 template<typename T>
 cola<T>::cola() {
-
+    cantidad_datos = 0;
+    primer_nodo = nullptr;
+    ultimo_nodo = nullptr;
 }
 
 template<typename T>
 void cola<T>::alta(T dato) {
-
+    nodo<T>* nuevo_nodo = new nodo<T>(dato);
+    if(cantidad_datos == 0){
+        ultimo_nodo = primer_nodo = nuevo_nodo;
+    }else{
+        ultimo_nodo->siguiente = nuevo_nodo;
+        ultimo_nodo = nuevo_nodo;
+    }
+    cantidad_datos++;
 }
 
 template<typename T>
 T cola<T>::primero() {
-
+    if(cantidad_datos == 0){
+        throw cola_exception();
+    }
+    return primer_nodo->dato;
 }
 
 template<typename T>
 T cola<T>::baja() {
-
+    if(cantidad_datos == 0){
+        throw cola_exception();
+    }
+    nodo<T>* eliminado = primer_nodo;
+    T dato_eliminado = primer_nodo->dato;
+    if(cantidad_datos == 1){
+        delete eliminado;
+        primer_nodo = ultimo_nodo = nullptr;
+    }else{
+        primer_nodo = primer_nodo->siguiente;
+        delete eliminado;
+    }
+    cantidad_datos--;
+    return dato_eliminado;
 }
 
 template<typename T>
 size_t cola<T>::tamanio() {
-
+    return cantidad_datos;
 }
 
 template<typename T>
 bool cola<T>::vacio() {
-
+    return cantidad_datos == 0;
 }
 
 template<typename T>
 cola<T>::~cola() {
-
+    nodo<T>* actual = primer_nodo;
+    nodo<T>* aux;
+    for (size_t i = 0; i < cantidad_datos; i++) {
+        aux = actual->siguiente;
+        delete actual;
+        actual = aux;
+    }
 }
 
 #endif
