@@ -34,7 +34,7 @@ public:
 
     friend std::ostream& operator<<(std::ostream& os, const artefacto& artefacto1);
 
-    bool operator==(const artefacto& artefacto1) const;
+    bool operator==(const artefacto& artefacto1);
 
     ~artefacto() = default;
 };

@@ -19,6 +19,6 @@ std::ostream& operator<<(std::ostream& os, const artefacto& artefacto1) {
     return os;
 }
 
-bool artefacto::operator==(const artefacto& artefacto1) const{
+bool artefacto::operator==(const artefacto& artefacto1) {
     return id == artefacto1.id;
 }
