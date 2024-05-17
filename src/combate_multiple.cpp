@@ -1,13 +1,14 @@
 #include "combate_multiple.hpp"
 #include <iostream>
 
+using namespace std;
 
 void combate_multiple::agregar_combate(combate combate_a_agregar) {
     if(cola_de_combates.tamanio() < 6 ){
         cola_de_combates.alta(combate_a_agregar);
-        std::cout << "Combate agregado correctamente" << std::endl;
+        cout << "Combate agregado correctamente" << endl;
     }else{
-        std::cout << "No se pueden agregar mas combates \n" << std::endl;
+        cout << "No se pueden agregar mas combates \n" << endl;
     }
 }
 
@@ -18,7 +19,7 @@ size_t combate_multiple::pelear() {
     }
     combate combate_actual = cola_de_combates.primero();
     poder_trazacamino_total_gastado += combate_actual.obtener_poder_gastado();
-    std::cout << "Combatiendo...\n" << combate_actual << std::endl;
+    cout << "Combatiendo...\n" << combate_actual << endl;
     cola_de_combates.baja();
 
     return poder_trazacamino_total_gastado + pelear();

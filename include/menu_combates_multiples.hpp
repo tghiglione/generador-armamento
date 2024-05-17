@@ -21,7 +21,7 @@ private:
     const string OPCION_INVALIDA = "Opcion invalida, por favor elija otra";
 
 public:
-
+    //Constructor
     menu_combates_multiples();
 
     // Pre: -

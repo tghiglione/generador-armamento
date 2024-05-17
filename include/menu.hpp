@@ -11,17 +11,16 @@ private:
         SALIDA_DEL_MENU = 0,
         SECCION_ARMAMENTO_DE_ARTEFACTOS = 1,
         SECCION_COMBATES_MULTIPLES = 2,
-
     };
     const string TITULO_MENU = "Menu principal \n";
-    const string INSTRUCCIONES_DE_MENU = "Para continuar elija una opcion: \n 0- Salir \n 1- Ir al Armamento de Artefactos \n 2- Ir a Combates Multiples";
+    const string INSTRUCCIONES_DE_MENU = "Para continuar elija una opcion: \n 0- Salir \n 1- Ir al menu de Armamento de Artefactos \n 2- Ir al menu de Combates Multiples";
     const string OPCION_INVALIDA = "Opcion invalida, por favor elija otra";
 
     bool salida;
     int opcion_elegida;
 
 public:
-
+    // Constructor
     menu();
 
     // Pre: -
@@ -29,6 +28,5 @@ public:
     void elegir_seccion_menu();
 
 };
-
 
 #endif //AYED_TP3_1C2024_MENU_HPP

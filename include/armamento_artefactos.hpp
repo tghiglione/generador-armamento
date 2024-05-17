@@ -5,13 +5,15 @@
 #include "lista_circular.hpp"
 #include <iostream>
 
+using namespace std;
+
 class armamento_artefactos {
 private:
     lista_circular<artefacto> armamento;
-    std::string nombre_armamento;
-    std::string nombre_usuario;
+    string nombre_armamento;
+    string nombre_usuario;
 
-    artefacto crear_artefacto_importado(std::string linea_de_archivo);
+    artefacto crear_artefacto_importado(string linea_de_archivo);
 
 public:
 
@@ -19,7 +21,7 @@ public:
     armamento_artefactos();
 
     // Constructor
-    armamento_artefactos(std::string path_archivo);
+    armamento_artefactos(string path_archivo);
 
     // Pre: No se puede agregar dos veces el mismo artefacto y no se pueden agregar mas de 6 artefactos.
     // Post: Agrega un artefacto a la lista de armamento.

@@ -30,7 +30,6 @@ void menu_combates_multiples::elegir_opcion_menu_combates() {
                 cout << "El poder total gastado fue: " << poder_trazacamino_gastado << endl;
             }
                 break;
-
             default:
                 cout << OPCION_INVALIDA << endl;
                 break;

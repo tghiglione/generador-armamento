@@ -31,15 +31,15 @@ artefacto menu_armamento::artefacto_ingresado_por_usuario() {
 }
 
 string menu_armamento::generador_ruta_armamento_importado() {
-    string nombre_archivo;
+    string ruta_archivo;
     cout << "Ingrese nombre del archivo (UUID-Nombre_armamento): ";
-    cin >> nombre_archivo;
-    nombre_archivo = nombre_archivo + ".txt";
-    return nombre_archivo;
+    cin >> ruta_archivo;
+    ruta_archivo = ruta_archivo + ".csv";
+    return ruta_archivo;
 }
 
 void menu_armamento::elegir_importar_o_crear_armamento() {
-    cout << TITULO_ARMAMENTO << endl;
+    cout << TITULO_MENU_ARMAMENTO << endl;
 
     cout << INSTRUCCIONES_CREAR_ARMAMENTO << endl;
     cin >> opcion_crear_o_importar;
@@ -63,13 +63,10 @@ void menu_armamento::elegir_importar_o_crear_armamento() {
             std::cout << OPCION_INVALIDA << std::endl;
             break;
     }
-
 }
 
 void menu_armamento::elegir_opcion_menu_armamento(armamento_artefactos& nuevo_armamento) {
-
     while (!salida_menu_armamento) {
-
         cout << INSTRUCCIONES_MENU_ARMAMENTO << endl;
         cin >> opcion_elegida_menu_armamento;
 

@@ -26,7 +26,7 @@ private:
     int opcion_elegida_menu_armamento;
     int opcion_crear_o_importar;
 
-    const string TITULO_ARMAMENTO = "Armamento de artefactos \n";
+    const string TITULO_MENU_ARMAMENTO = "Armamento de artefactos \n";
     const string INSTRUCCIONES_CREAR_ARMAMENTO = "Desea crear un armamento o importarlo? Elija una opcion: \n 0- Volver al menu principal \n 1- Crear armamento \n 2- Importar armamento";
     const string INSTRUCCIONES_MENU_ARMAMENTO = "Para continuar elija una opcion: \n 0- Volver al menu principal \n"
                                                 "1- Agregar artefacto \n 2- Mostrar artefacto actual \n 3- Mostrar siguiente artefacto \n"
@@ -34,8 +34,12 @@ private:
                                                 "6- Quitar artefacto \n 7- Exportar armamento";
     const string OPCION_INVALIDA = "Opcion invalida, por favor elija otra";
 
+    // Pre: -
+    // Post: Devuelve un artefacto creado por el usuario
     artefacto artefacto_ingresado_por_usuario();
 
+    // Pre: Se tiene un archivo en la carpeta principal del proyecto
+    // Post: Devuelve la ruta del archivo especificado por el usuario, con formato UUID-nombre.csv
     string generador_ruta_armamento_importado();
 
 
@@ -45,9 +49,11 @@ public:
     menu_armamento();
 
     // Pre: -
-    // Post:
+    // Post: El usuario puede agregar, quitar o mostrar artefactos y tambien exportar el armamento en csv
     void elegir_opcion_menu_armamento(armamento_artefactos& nuevo_armamento);
 
+    // Pre: -
+    // Post: El usuario selecciona si importa un archivo con el armamento o si lo crea desde cero
     void elegir_importar_o_crear_armamento();
 
 };
